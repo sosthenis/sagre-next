@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAGRE-NEXT — Resumo Executivo</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#020e1c;--deep:#061825;--blue:#0a2f4e;--mid:#0d3d63;--accent:#1565c0;--glow:#1e88e5;--aqua:#29b6f6;--white:#f0f8ff;--off:#e8f4f8;--amber:#f59e0b;--amber2:#fbbf24;--text:#cde8f8;--muted:#6a9bbf;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--navy);color:var(--text);overflow-x:hidden;}
+#wc{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;opacity:.18;pointer-events:none;}
+nav{position:fixed;top:0;width:100%;z-index:200;background:rgba(2,14,28,.88);backdrop-filter:blur(20px);border-bottom:1px solid rgba(41,182,246,.15);padding:0 48px;height:60px;display:flex;align-items:center;justify-content:space-between;}
+.nl{font-family:'Playfair Display',serif;font-size:20px;color:var(--aqua);letter-spacing:.04em;}
+.nb{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);border:1px solid rgba(245,158,11,.4);padding:4px 12px;border-radius:20px;}
+.nm{display:flex;gap:28px;list-style:none;}
+.nm a{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .3s;}
+.nm a:hover{color:var(--aqua);}
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 48px 80px;overflow:hidden;z-index:1;}
+.rings{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;}
+.ring{position:absolute;border-radius:50%;border:1px solid rgba(41,182,246,.1);transform:translate(-50%,-50%);animation:pr 6s ease-in-out infinite;}
+.ring:nth-child(1){width:300px;height:300px;animation-delay:0s;}
+.ring:nth-child(2){width:500px;height:500px;animation-delay:1s;}
+.ring:nth-child(3){width:700px;height:700px;animation-delay:2s;}
+.ring:nth-child(4){width:900px;height:900px;animation-delay:3s;}
+@keyframes pr{0%,100%{opacity:.12;transform:translate(-50%,-50%) scale(1);}50%{opacity:.25;transform:translate(-50%,-50%) scale(1.04);}}
+.hl{display:inline-flex;align-items:center;gap:8px;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.35);color:var(--amber2);font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;padding:6px 18px;border-radius:30px;margin-bottom:36px;animation:sd .8s ease both;}
+.hl::before{content:'';width:6px;height:6px;background:var(--amber2);border-radius:50%;animation:bk 2s infinite;}
+@keyframes bk{0%,100%{opacity:1}50%{opacity:.2}}
+@keyframes sd{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(60px,9vw,110px);font-weight:900;line-height:.9;letter-spacing:-.03em;color:var(--white);margin-bottom:8px;animation:su .9s .1s ease both;}
+.hero h1 span{display:block;font-style:italic;font-weight:700;font-size:.48em;color:var(--aqua);letter-spacing:.03em;margin-top:14px;}
+@keyframes su{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.hs{max-width:540px;font-size:16px;font-weight:300;color:var(--muted);line-height:1.8;margin:32px auto 48px;animation:su .9s .25s ease both;}
+.hm{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(106,155,191,.5);animation:su .9s .4s ease both;}
+.sc{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);opacity:.6;animation:bo 2s infinite;}
+@keyframes bo{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
+.wv{position:relative;height:70px;overflow:hidden;z-index:1;}
+.wv svg{position:absolute;bottom:0;width:100%;}
+section{position:relative;z-index:1;padding:80px 0;}
+.sw{max-width:900px;margin:0 auto;padding:0 48px;}
+.ey{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+.ey::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(245,158,11,.4),transparent);}
+.st{font-family:'Playfair Display',serif;font-size:clamp(30px,4vw,46px);font-weight:700;color:var(--white);line-height:1.15;margin-bottom:24px;}
+.sb{font-size:16px;font-weight:300;color:var(--text);line-height:1.85;max-width:680px;}
+.ac{background:linear-gradient(135deg,rgba(245,158,11,.08),rgba(245,158,11,.03));border-left:3px solid var(--amber);border-radius:0 12px 12px 0;padding:28px 32px;margin:32px 0;position:relative;overflow:hidden;}
+.ac::before{content:'"';position:absolute;top:-10px;right:20px;font-family:'Playfair Display',serif;font-size:120px;color:rgba(245,158,11,.06);line-height:1;}
+.ac .bl{font-size:17px;font-weight:600;color:var(--amber2);margin-bottom:10px;line-height:1.4;}
+.ac .bo{font-size:14px;font-weight:300;color:rgba(205,232,248,.7);line-height:1.75;}
+.qg{display:grid;gap:3px;margin:36px 0;}
+.qi{display:flex;align-items:flex-start;gap:18px;padding:18px 22px;background:rgba(13,61,99,.4);border:1px solid rgba(41,182,246,.08);border-radius:8px;transition:all .4s;}
+.qi:hover{background:rgba(21,101,192,.2);border-color:rgba(41,182,246,.25);transform:translateX(6px);}
+.qi .ic{width:34px;height:34px;border-radius:50%;background:rgba(41,182,246,.1);border:1px solid rgba(41,182,246,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--aqua);font-size:13px;margin-top:2px;}
+.qi .qt{font-size:15px;font-style:italic;color:var(--text);line-height:1.6;padding-top:4px;}
+.ct{width:100%;border-collapse:collapse;margin:36px 0;border-radius:12px;overflow:hidden;}
+.ct thead th{padding:15px 22px;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;}
+.ct thead th:first-child{background:rgba(106,155,191,.15);color:var(--muted);text-align:left;}
+.ct thead th:last-child{background:rgba(21,101,192,.3);color:var(--aqua);text-align:left;}
+.ct tbody td{padding:15px 22px;font-size:14px;line-height:1.5;border-bottom:1px solid rgba(41,182,246,.06);vertical-align:top;}
+.ct tbody td:first-child{color:rgba(205,232,248,.45);background:rgba(6,24,37,.4);padding-left:38px;position:relative;}
+.ct tbody td:first-child::before{content:'✕';position:absolute;left:14px;color:rgba(200,70,70,.5);font-size:10px;top:18px;}
+.ct tbody td:last-child{color:var(--text);background:rgba(13,61,99,.25);padding-left:38px;position:relative;}
+.ct tbody td:last-child::before{content:'✓';position:absolute;left:14px;color:var(--aqua);font-size:12px;top:17px;font-weight:700;}
+.ct tbody tr:hover td{filter:brightness(1.1);}
+.clt{width:100%;border-collapse:collapse;margin:28px 0;}
+.clt th{background:rgba(21,101,192,.25);color:var(--aqua);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:13px 18px;text-align:left;border-bottom:1px solid rgba(41,182,246,.2);}
+.clt td{padding:13px 18px;font-size:14px;line-height:1.5;border-bottom:1px solid rgba(41,182,246,.06);color:var(--text);vertical-align:top;}
+.clt tr:nth-child(even) td{background:rgba(13,61,99,.2);}
+.clt tr:hover td{background:rgba(41,182,246,.06);}
+.sb2{display:inline-block;font-size:11px;font-weight:600;color:var(--aqua);background:rgba(41,182,246,.1);border:1px solid rgba(41,182,246,.2);padding:2px 10px;border-radius:4px;white-space:nowrap;}
+.cl{display:grid;gap:14px;margin:28px 0;}
+.ci{display:flex;gap:16px;align-items:flex-start;padding:17px 20px;background:rgba(13,61,99,.3);border:1px solid rgba(41,182,246,.08);border-radius:8px;transition:border-color .3s;}
+.ci:hover{border-color:rgba(41,182,246,.22);}
+.cd{width:24px;height:24px;border-radius:50%;background:rgba(41,182,246,.15);border:1px solid var(--aqua);flex-shrink:0;display:flex;align-items:center;justify-content:center;color:var(--aqua);font-size:11px;font-weight:700;margin-top:2px;}
+.ct2{font-size:15px;line-height:1.65;color:var(--text);font-weight:300;}
+.cta{background:linear-gradient(135deg,rgba(13,61,99,.8),rgba(21,101,192,.4));border:1px solid rgba(41,182,246,.2);border-radius:20px;padding:56px 52px;text-align:center;position:relative;overflow:hidden;margin:40px 0;}
+.cta h2{font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:var(--white);margin-bottom:18px;line-height:1.2;}
+.cta p{font-size:15px;font-weight:300;color:var(--muted);line-height:1.8;max-width:540px;margin:0 auto 12px;}
+.cta p strong{color:var(--aqua);font-weight:500;}
+footer{position:relative;z-index:1;background:rgba(2,14,28,.9);border-top:1px solid rgba(41,182,246,.1);padding:26px 48px;text-align:center;font-size:12px;color:var(--muted);letter-spacing:.06em;}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+<canvas id="wc"></canvas>
+<nav>
+  <div class="nl">SAGRE-NEXT</div>
+  <ul class="nm">
+    <li><a href="#prob">O Problema</a></li>
+    <li><a href="#op">A Oportunidade</a></li>
+    <li><a href="#cli">Inteligência Climática</a></li>
+    <li><a href="#fei">O que já foi feito</a></li>
+  </ul>
+  <div class="nb">Nota Executiva · Mar/2026</div>
+</nav>
+
+<div class="hero">
+  <div class="rings"><div class="ring"></div><div class="ring"></div><div class="ring"></div><div class="ring"></div></div>
+  <div class="hl">Gerência de Operações — GEOPE · COGERH</div>
+  <h1>SAGRE<span>Sistema de Acompanhamento e<br>Gestão dos Reservatórios</span></h1>
+  <p class="hs">Modernização, documentação e democratização do principal instrumento de simulação operacional de reservatórios da COGERH.</p>
+  <div class="hm">Nota Técnica Executiva &nbsp;·&nbsp; Março / 2026 &nbsp;·&nbsp; Uso Interno</div>
+  <div class="sc"><span>Deslize para explorar</span><svg width="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 4v12M4 10l6 6 6-6"/></svg></div>
+</div>
+
+<div class="wv"><svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,35 C360,70 1080,0 1440,35 L1440,70 L0,70 Z" fill="#061825"/></svg></div>
+
+<section id="prob" style="background:linear-gradient(180deg,#061825 0%,#020e1c 100%);">
+<div class="sw">
+  <div class="reveal">
+    <div class="ey">O Ponto de Partida</div>
+    <h2 class="st">Um instrumento valioso.<br><em style="color:var(--aqua);">Uma fragilidade silenciosa.</em></h2>
+    <p class="sb">A COGERH dispõe de um instrumento importante para a definição de suas regras operacionais: o SAGRE. É com base nas simulações deste sistema que se definem estratégias operacionais, se ajustam vazões nas estações de bombeamento e nos canais, se organizam as reuniões de alocação e se comunicam as perspectivas hídricas para as dez gerências regionais do estado.</p>
+  </div>
+  <div class="reveal" style="margin-top:36px;">
+    <div class="ac">
+      <div class="bl">O problema não é o sistema. O sistema funciona — e funciona bem.</div>
+      <div class="bo">O sistema foi desenvolvido por um funcionário concursado da COGERH, que ao longo do tempo construiu uma ferramenta de grande valor operacional. Esse histórico é merecidamente reconhecido. Ocorre que, naturalmente, todo o conhecimento sobre como configurar, operar e interpretar o SAGRE concentrou-se nessa pessoa — sem que houvesse a formalização de documentação ou transferência desse saber para a equipe. Não se trata de uma crítica: é uma situação comum em sistemas desenvolvidos internamente. Mas é uma fragilidade real para a continuidade operacional da empresa, caso esse profissional esteja indisponível por qualquer razão.</div>
+    </div>
+  </div>
+  <div class="reveal" style="margin-top:44px;">
+    <p class="sb" style="margin-bottom:24px;">O resultado dessas simulações responde perguntas decisivas para a operação:</p>
+    <div class="qg">
+      <div class="qi"><div class="ic">?</div><div class="qt">Se mantida a operação atual, quando o sistema atingirá o volume crítico?</div></div>
+      <div class="qi"><div class="ic">?</div><div class="qt">Qual o efeito de aumentar ou reduzir a vazão nas estações de bombeamento e nos canais sobre os níveis dos açudes a jusante?</div></div>
+      <div class="qi"><div class="ic">?</div><div class="qt">Em um ano de seca análogo a 2012, qual seria o comportamento do sistema com as demandas atuais?</div></div>
+      <div class="qi"><div class="ic">?</div><div class="qt">O açude regional suporta a demanda da próxima reunião de alocação sem restrição adicional?</div></div>
+    </div>
+  </div>
+  <div class="reveal" style="margin-top:36px;">
+    <p class="sb">A iniciativa de uso do SAGRE para os sistemas mais críticos — em especial o abastecimento da Região Metropolitana de Fortaleza — parte da Presidência e da Diretoria de Operações da COGERH. As dez gerências regionais do estado também utilizam o sistema para planejar suas próprias operações e conduzir suas reuniões de alocação — e compartilham da mesma situação de dependência de um único detentor do conhecimento.</p>
+  </div>
+</div>
+</section>
+
+<div class="wv" style="transform:rotate(180deg)"><svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,35 C360,70 1080,0 1440,35 L1440,70 L0,70 Z" fill="#020e1c"/></svg></div>
+
+<section id="op">
+<div class="sw">
+  <div class="reveal">
+    <div class="ey">A Oportunidade</div>
+    <h2 class="st">Não é uma substituição.<br><em style="color:var(--aqua);">É uma evolução.</em></h2>
+    <p class="sb">A proposta é preservar a lógica hidrológica que já funciona e construir ao redor dela um sistema moderno, documentado, acessível e que pertença à instituição — não a uma pessoa.</p>
+  </div>
+  <div class="reveal" style="margin-top:40px;">
+    <table class="ct">
+      <thead><tr><th>HOJE — SAGRE</th><th>AMANHÃ — SAGRE-NEXT</th></tr></thead>
+      <tbody>
+        <tr><td>Planilha Excel com macros VBA fechadas</td><td>Sistema web acessível por qualquer técnico da COGERH, via navegador</td></tr>
+        <tr><td>Conhecimento concentrado em uma pessoa, sem manual</td><td>Manual institucional completo + código documentado e auditável</td></tr>
+        <tr><td>Cenários baseados apenas em anos históricos selecionados manualmente</td><td>Cenários informados por previsões climáticas de fontes nacionais e internacionais</td></tr>
+        <tr><td>Sem rastreabilidade — impossível saber o que foi simulado e quando</td><td>Log completo: parâmetros, usuário, data e resultado de cada simulação</td></tr>
+        <tr><td>Uso disponível, mas operação dependente de quem domina a ferramenta internamente — barreira de entrada alta para novos usuários</td><td>Interface intuitiva: qualquer gestor opera sem precisar conhecer a estrutura interna da planilha</td></tr>
+        <tr><td>Sem alertas — cotas críticas percebidas na operação, não antecipadas</td><td>Alertas automáticos quando a projeção indica cotas críticas à vista</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</section>
+
+<div class="wv"><svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,20 C480,65 960,5 1440,45 L1440,70 L0,70 Z" fill="#061825"/></svg></div>
+
+<section id="cli" style="background:linear-gradient(180deg,#061825,#020e1c);">
+<div class="sw">
+  <div class="reveal">
+    <div class="ey">Um Diferencial</div>
+    <h2 class="st">Inteligência climática<br><em style="color:var(--aqua);">na simulação.</em></h2>
+    <p class="sb">O SAGRE atual escolhe um ano histórico como referência para simular o aporte futuro. Funciona — mas é uma analogia. O SAGRE-NEXT propõe um passo além: integrar a simulação com dados de previsão climática de fontes científicas consolidadas, nacionais e internacionais.</p>
+  </div>
+  <div class="reveal" style="margin-top:36px;">
+    <table class="clt">
+      <thead><tr><th>Fonte</th><th>Abrangência</th><th>Contribuição</th></tr></thead>
+      <tbody>
+        <tr><td><span class="sb2">FUNCEME</span></td><td>Regional — CE/NE</td><td>Previsões sazonais de precipitação, monitoramento de anomalias e dados de postos pluviométricos locais</td></tr>
+        <tr><td><span class="sb2">INMET</span></td><td>Nacional</td><td>Previsões de curto e médio prazo — base primária federal de dados meteorológicos</td></tr>
+        <tr><td><span class="sb2">CPTEC / INPE</span></td><td>Nacional e regional</td><td>Previsões climáticas sazonais e monitoramento da ZCIT, determinante para chuvas no Ceará</td></tr>
+        <tr><td><span class="sb2">NOAA / CPC</span></td><td>Global</td><td>Monitoramento ENSO (El Niño / La Niña) — antecipa padrões de chuva no Nordeste com 3 a 6 meses</td></tr>
+        <tr><td><span class="sb2">IRI — Columbia</span></td><td>Global</td><td>Mapas de probabilidade de precipitação abaixo, dentro ou acima do normal para horizonte de 1 a 3 meses</td></tr>
+        <tr><td><span class="sb2">Copernicus / C3S</span></td><td>Global</td><td>Ensemble de múltiplos modelos climáticos com dados reanalisados de alta qualidade e acesso aberto</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="reveal" style="margin-top:20px;">
+    <div class="ac" style="border-left-color:var(--aqua);background:rgba(41,182,246,.05);">
+      <div class="bl" style="color:var(--aqua);">A pergunta muda de patamar.</div>
+      <div class="bo">Em vez de "qual ano histórico mais se parece com este?", passa a ser: dado o que as principais fontes climáticas do mundo indicam para os próximos meses, qual é a probabilidade de termos um ano seco, médio ou chuvoso? A simulação ganha contexto probabilístico — e as decisões operacionais ganham em consistência.</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<div class="wv" style="transform:rotate(180deg)"><svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,20 C480,65 960,5 1440,45 L1440,70 L0,70 Z" fill="#020e1c"/></svg></div>
+
+<section id="fei">
+<div class="sw">
+  <div class="reveal">
+    <div class="ey">O que já foi feito</div>
+    <h2 class="st">Esta proposta<br><em style="color:var(--aqua);">não parte do zero.</em></h2>
+    <p class="sb">A análise técnica do SAGRE original já foi conduzida, permitindo:</p>
+  </div>
+  <div class="reveal" style="margin-top:32px;">
+    <div class="cl">
+      <div class="ci"><div class="cd">✓</div><div class="ct2">Identificar e documentar toda a lógica de simulação — equações, regras condicionais, tabelas batimétricas e parâmetros operacionais — por meio de engenharia reversa da planilha</div></div>
+      <div class="ci"><div class="cd">✓</div><div class="ct2">Produzir o Mapa de Regras Condicionais do sistema, descrevendo o comportamento do modelo para cada açude em cada situação operacional</div></div>
+      <div class="ci"><div class="cd">✓</div><div class="ct2">Elaborar o Plano de Projeto completo com as seis fases de desenvolvimento, arquitetura técnica proposta e matriz de riscos</div></div>
+      <div class="ci"><div class="cd">✓</div><div class="ct2">Comparar o SAGRE com sistemas equivalentes internacionais — HEC-ResSim (Exército dos EUA), WEAP (Stockholm Environment Institute) e Pywr (Universidade de Manchester) — confirmando que a metodologia está alinhada ao estado da arte mundial</div></div>
+    </div>
+  </div>
+  <div class="reveal" style="margin-top:12px;padding:18px 22px;background:rgba(13,61,99,.3);border-radius:8px;border:1px solid rgba(41,182,246,.1);">
+    <p style="font-size:14px;color:var(--muted);font-style:italic;line-height:1.7;">A próxima etapa — pendente de autorização institucional — é a análise direta do código VBA, que completará o mapeamento e viabilizará o início do desenvolvimento.</p>
+  </div>
+  <div class="reveal" style="margin-top:60px;">
+    <div class="cta">
+      <h2>Uma decisão institucional.</h2>
+      <p>O SAGRE é hoje um ativo valioso da COGERH — mas um ativo frágil. O conhecimento que o sustenta não pertence à instituição: pertence a quem o opera.</p>
+      <p>A proposta do SAGRE-NEXT é transformar esse conhecimento em <strong>patrimônio público da empresa</strong>, acessível a toda a equipe técnica, auditável, evoluível e independente de qualquer pessoa.</p>
+      <p style="font-size:15px;color:var(--aqua);font-weight:500;margin-top:18px;">Não se trata de um projeto de tecnologia.<br>Trata-se de um projeto de gestão do conhecimento — com tecnologia como meio.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>COGERH — Gerência de Operações / GEOPE &nbsp;·&nbsp; SAGRE-NEXT &nbsp;·&nbsp; Março/2026 &nbsp;·&nbsp; Uso Interno &nbsp;·&nbsp; Documento para discussão</footer>
+
+<script>
+// CANVAS ÁGUA
+const cv=document.getElementById('wc'),ctx=cv.getContext('2d');
+let W,H,ws=[],ps=[];
+function rz(){W=cv.width=window.innerWidth;H=cv.height=window.innerHeight;}
+rz();window.addEventListener('resize',rz);
+for(let i=0;i<5;i++)ws.push({y:.28+i*.14,amp:28+i*14,freq:.003+i*.001,sp:.0008+i*.0003,ph:Math.random()*Math.PI*2,al:.08-i*.012});
+for(let i=0;i<55;i++)ps.push({x:Math.random()*1400,y:Math.random()*900,r:Math.random()*2+.4,vx:(Math.random()-.5)*.3,vy:-Math.random()*.4-.1,al:Math.random()*.28+.04});
+function draw(){
+  ctx.clearRect(0,0,W,H);
+  ws.forEach(w=>{
+    ctx.beginPath();ctx.moveTo(0,H*w.y);
+    for(let x=0;x<=W;x+=4){const y=H*w.y+Math.sin(x*w.freq+w.ph)*w.amp+Math.sin(x*w.freq*1.7+w.ph*.7)*(w.amp*.35);ctx.lineTo(x,y);}
+    ctx.lineTo(W,H);ctx.lineTo(0,H);ctx.closePath();
+    const g=ctx.createLinearGradient(0,H*w.y-w.amp,0,H);
+    g.addColorStop(0,`rgba(41,182,246,${w.al})`);g.addColorStop(1,`rgba(13,61,99,${w.al*.3})`);
+    ctx.fillStyle=g;ctx.fill();w.ph+=w.sp;
+  });
+  ps.forEach(p=>{
+    ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle=`rgba(41,182,246,${p.al})`;ctx.fill();
+    p.x+=p.vx;p.y+=p.vy;
+    if(p.y<-10){p.y=H+10;p.x=Math.random()*W;}
+    if(p.x<0)p.x=W;if(p.x>W)p.x=0;
+  });
+  requestAnimationFrame(draw);
+}
+draw();
+// REVEAL
+const rvs=document.querySelectorAll('.reveal');
+new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:.1}).observe&&rvs.forEach(r=>new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:.08}).observe(r));
+</script>
+</body>
+</html>
